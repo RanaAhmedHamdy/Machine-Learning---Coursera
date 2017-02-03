@@ -20,6 +20,13 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
+output = sigmoid(X*theta);
+before_summation = -y'*log(output) - (1-y')*log(output);
+J = (1/m)*(before_summation);
+
+error = (output-y)'*X;
+grad = (1/m)*error;
+
 
 
 
