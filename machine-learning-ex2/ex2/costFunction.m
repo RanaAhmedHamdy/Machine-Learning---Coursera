@@ -24,7 +24,7 @@ output = sigmoid(X*theta);
 before_summation = -y'*log(output) - (1-y')*log(1-output);
 J = (1/m)*(before_summation);
 
-error = (output-y)'*X;
+error = X'*(output-y);
 grad = (1/m)*error;
 
 
